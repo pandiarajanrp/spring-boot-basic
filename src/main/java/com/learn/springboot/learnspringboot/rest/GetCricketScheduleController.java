@@ -6,10 +6,14 @@ import org.springframework.web.bind.annotation.RestController;
 import util.Coach;
 
 @RestController
-public class GetScheduleForCricket {
+public class GetCricketScheduleController {
     private Coach cricketCoach;
+//    @Autowired
+//    public GetCricketScheduleController(Coach cricketCoach) {
+//        this.cricketCoach = cricketCoach;
+//    }
     @Autowired
-    public GetScheduleForCricket(Coach cricketCoach) {
+    public void setCricketCoach(Coach cricketCoach) {
         this.cricketCoach = cricketCoach;
     }
 
