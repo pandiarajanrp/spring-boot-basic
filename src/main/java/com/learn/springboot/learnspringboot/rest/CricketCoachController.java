@@ -14,7 +14,7 @@ public class CricketCoachController {
 //        this.cricketCoach = cricketCoach;
 //    }
     @Autowired
-    public void setCricketCoach(@Qualifier("cricketCoach") Coach cricketCoach) {
+    public void setCricketCoach(Coach cricketCoach) {
         this.coach = cricketCoach;
     }
 
