@@ -26,8 +26,14 @@ public class LearnspringbootApplication {
 		return runner -> {
 			// createStudent(studentDAO);
 			// getStudentById(studentDAO);
-			getAllStudents(studentDAO);
+			// getAllStudents(studentDAO);
+			getAllByLastName(studentDAO);
 		};
+	}
+
+	private void getAllByLastName(StudentDAO studentDAO) {
+		List<Student> studentList = studentDAO.findAllByLastName("Smith");
+		System.out.println(studentList);
 	}
 
 	private void getAllStudents(StudentDAO studentDAO) {
@@ -42,6 +48,12 @@ public class LearnspringbootApplication {
 		System.out.println("Storing student data");
 		//save new student object
 		studentDAO.save(student);
+
+		Student student2 = new Student("John", "Smith", "john.smith@gmail.com");
+		System.out.println("Storing student data");
+		//save new student object
+		studentDAO.save(student2);
+
 		//display newly generated student id
 		System.out.println("Student Generated ::: " + student.getId());
 
@@ -54,5 +66,6 @@ public class LearnspringbootApplication {
 		Student getById = studentDAO.findById(1);
 		System.out.println(getById);
 	}
+
 
 }
