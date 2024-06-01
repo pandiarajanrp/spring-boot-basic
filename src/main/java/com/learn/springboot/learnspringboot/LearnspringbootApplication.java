@@ -7,6 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.List;
+
 @SpringBootApplication(
 		scanBasePackages= {
 				"com.learn.springboot.learnspringboot",
@@ -22,8 +24,15 @@ public class LearnspringbootApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return runner -> {
-			createStudent(studentDAO);
+			// createStudent(studentDAO);
+			// getStudentById(studentDAO);
+			getAllStudents(studentDAO);
 		};
+	}
+
+	private void getAllStudents(StudentDAO studentDAO) {
+		List<Student> studentList = studentDAO.findAll();
+		System.out.println(studentList);
 	}
 
 	private void createStudent(StudentDAO studentDAO) {
@@ -37,6 +46,11 @@ public class LearnspringbootApplication {
 		System.out.println("Student Generated ::: " + student.getId());
 
 		//get student details by id
+		Student getById = studentDAO.findById(1);
+		System.out.println(getById);
+	}
+
+	private void getStudentById(StudentDAO studentDAO) {
 		Student getById = studentDAO.findById(1);
 		System.out.println(getById);
 	}
