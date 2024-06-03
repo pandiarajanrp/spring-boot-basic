@@ -30,7 +30,8 @@ public class LearnspringbootApplication {
 			//getAllByLastName(studentDAO);
 			//updateById(studentDAO);
 			//updateAll(studentDAO);
-			deleteStudentById(studentDAO);
+			//deleteStudentById(studentDAO);
+			deleteAll(studentDAO);
 			getAllStudents(studentDAO);
 		};
 	}
@@ -81,5 +82,10 @@ public class LearnspringbootApplication {
 
 	private void deleteStudentById(StudentDAO studentDAO) {
 		studentDAO.delete(1);
+	}
+
+	private void deleteAll(StudentDAO studentDAO) {
+		Integer count = studentDAO.deleteAll();
+		System.out.println("Deleted count " + count);
 	}
 }
