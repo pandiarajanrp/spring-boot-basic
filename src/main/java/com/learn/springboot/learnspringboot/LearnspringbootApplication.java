@@ -27,8 +27,20 @@ public class LearnspringbootApplication {
 			// createStudent(studentDAO);
 			// getStudentById(studentDAO);
 			// getAllStudents(studentDAO);
-			getAllByLastName(studentDAO);
+			//getAllByLastName(studentDAO);
+			//updateById(studentDAO);
+			//updateAll(studentDAO);
+			deleteStudentById(studentDAO);
+			getAllStudents(studentDAO);
 		};
+	}
+
+	private void updateAll(StudentDAO studentDAO) {
+		studentDAO.updateAll("Mexico");
+	}
+
+	private void updateById(StudentDAO studentDAO) {
+		studentDAO.updateById(1, "Sina");
 	}
 
 	private void getAllByLastName(StudentDAO studentDAO) {
@@ -67,5 +79,7 @@ public class LearnspringbootApplication {
 		System.out.println(getById);
 	}
 
-
+	private void deleteStudentById(StudentDAO studentDAO) {
+		studentDAO.delete(1);
+	}
 }
