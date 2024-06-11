@@ -27,12 +27,12 @@ public class LearnspringbootApplication {
 			// createStudent(studentDAO);
 			// getStudentById(studentDAO);
 			// getAllStudents(studentDAO);
-			//getAllByLastName(studentDAO);
-			//updateById(studentDAO);
-			//updateAll(studentDAO);
-			//deleteStudentById(studentDAO);
-			deleteAll(studentDAO);
-			getAllStudents(studentDAO);
+			// getAllByLastName(studentDAO);
+			// updateById(studentDAO);
+			// updateAll(studentDAO);
+			// deleteStudentById(studentDAO);
+			// deleteAll(studentDAO);
+			// getAllStudents(studentDAO);
 		};
 	}
 
