@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class StudentRestExceptionHandler {
     @ExceptionHandler
     public ResponseEntity<StudentErrorResponse> handleException(StudentNotFoundException exec) {
+        // Create new instance of error message
         StudentErrorResponse error = new StudentErrorResponse();
         error.setStatus(HttpStatus.NOT_FOUND.value());
         error.setMessage(exec.getMessage());
