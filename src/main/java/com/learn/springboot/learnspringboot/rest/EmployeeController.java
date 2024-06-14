@@ -16,22 +16,31 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
+    @PostMapping()
+    public Employee createEmployee(@RequestBody Employee employee) {
+        System.out.println("Coming here");
+        Employee emp = employeeService.save(employee);
+        return emp;
+    }
+
     @GetMapping()
     public List<Employee> getEmployee() {
         return this.employeeService.findAll();
     }
 
-    @PostMapping()
-    public Employee createEmployee() {
-        return null;
+    @GetMapping("/{id}")
+    public Employee getEmployeeById(@PathVariable Integer id) {
+        return employeeService.findById(id);
     }
 
-    @GetMapping("/{id}")
-    public Employee getEmployeeById(Integer id) {
-        return null;
+    @PutMapping("/{id}")
+    public Employee updateEmployee(@PathVariable Integer id, @RequestBody Employee employee) {
+        employee.setId(id);
+        Employee emp = employeeService.save(employee);
+        return emp;
     }
     @DeleteMapping("/{id}")
-    public void deleteEmployee(Integer id) {
-
+    public void deleteEmployee(@PathVariable Integer id) {
+        employeeService.delete(id);
     }
 }

@@ -9,7 +9,7 @@ public interface EmployeeService {
 
     Employee save(Employee employee);
 
-    Employee findById();
+    Employee findById(Integer id);
 
     void delete(Integer id);
 }
