@@ -2,8 +2,8 @@ package com.learn.springboot.learnspringboot.entity;
 
 import jakarta.persistence.*;
 @Entity
-@Table(name="employee")
-public class Employee {
+@Table(name="workers")
+public class Worker {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
@@ -18,11 +18,11 @@ public class Employee {
     @Column(name="email")
     private String email;
 
-    public Employee() {
+    public Worker() {
 
     }
 
-    public Employee(String firstName, String lastName, String email) {
+    public Worker(String firstName, String lastName, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -62,7 +62,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
+        return "Worker{" +
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
